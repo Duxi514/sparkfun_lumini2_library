@@ -26,16 +26,16 @@ void send(uint8_t data){
 
 
 
-void led_setup(int nr,int bl,int gr,int rd,int b){
+void led_setup(int nr,int bl,int gr,int rd,int lb){
 	int num=nr;
 	int blu=bl;
 	int gre=gr;
 	int red=rd;
-	int bri=b;
+	int b3 = set_brightness(lb);
 	clear_ring();
 	startframe();
 	for (int i = 0; i<num;i++){
-		send(224+bri);
+		send(b3);
 		send(blu);
 		send(gre);
 		send(red);
@@ -49,44 +49,44 @@ int set_brightness(int bright){ //224 containing the 3 led bits
 	return brightness;
 }
 
-void get_hun_flag(int c){
+void get_hun_flag(int h){
 	startframe();
 	for(int count=0; count < 7; count++){
-		red(c);
+		red(h);
 	}
 	for(int count=0; count < 7; count++){
-		white(c);
+		white(h);
 	}
 	for(int count=0; count < 13; count++){
-		green(c);
+		green(h);
 	}
 	for(int count=0; count < 7; count++){
-		white(c);
+		white(h);
 	}
 	for(int count=0; count < 7; count++){
-		red(c);
+		red(h);
 	}
 	endframe();
 }
 
-void rainbow(int c){
+void rainbow(int r){
 	startframe();
 	for(int count = 0; count < 5; count++){
-		purple(c);
+		purple(r);
 		_delay_ms(100);
-		blue(c);
+		blue(r);
 		_delay_ms(100);
-		green(c);
+		green(r);
 		_delay_ms(100);
-		yellow(c);
+		yellow(r);
 		_delay_ms(100);
-		orange(c);
+		orange(r);
 		_delay_ms(100);
-		red(c);
+		red(r);
 		_delay_ms(100);
-		cyan(c);
+		cyan(r);
 		_delay_ms(100);
-		grey(c);
+		grey(r);
 		_delay_ms(100);
 	}
 	endframe();
@@ -133,8 +133,9 @@ ISR(TIMER0_OVF_vect){					//OVERFLOW FUNCTION HANDLING THE SQUAREWAVE
 
 void fillandclear(int bl,int gr,int rd,int b){
 	startframe();
+	int b0 = set_brightness(b);
 	for(int i=0;i<40;i++){
-		send(224+b);
+		send(b0);
 		send(bl);
 		send(gr);
 		send(rd);
@@ -154,8 +155,9 @@ void fillandclear(int bl,int gr,int rd,int b){
  void pulse(int bl, int gr, int rd){
 	 for (int bit = 0;bit<31;bit++){
 		 startframe();
+		 int b1 = set_brightness(bit);
 		 for (int nr=0;nr<40;nr++){
-			 send(224+bit);
+			 send(b1);
 			 send(bl);
 			 send(gr);
 			 send(rd);
@@ -165,8 +167,9 @@ void fillandclear(int bl,int gr,int rd,int b){
 	 }
 	 for (int bit = 31;bit>0;bit--){
 		 startframe();
+		 int b2 = set_brightness(bit);
 		 for (int nr=0;nr<40;nr++){
-			 send(224+bit);
+			 send(b2);
 			 send(bl);
 			 send(gr);
 			 send(rd);
