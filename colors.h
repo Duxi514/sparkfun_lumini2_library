@@ -4,6 +4,18 @@
 
 int brightness;
 
+void startframe(){
+	for (int start = 0; start<4; start++){
+		send(0);
+	}
+}
+
+void endframe(){
+	for (int end = 0; end < 4; end++){
+		send(255);
+	}
+}
+
 void red(int b){
 	brightness = set_brightness(b);
 	send(brightness);
