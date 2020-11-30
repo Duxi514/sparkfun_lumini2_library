@@ -2,94 +2,177 @@
 #ifndef COLORS_H_
 #define COLORS_H_
 
+///Variable for holding brightness values
 int brightness;
 
+/**
+ *	@brief APA102 start frame
+ *
+ *	Sends the start frame that indicates the start of data input on the LED ring.
+ *	Consists of 4 bytes of zeros
+*/
 void startframe(){
 	for (int start = 0; start<4; start++){
 		send(0);
 	}
 }
 
+/**
+ *	@brief APA102 end frame
+ *
+ *	Sends the end frame that indicates the end of data input on the LED ring.
+ *	Consists of 4 bytes of ones
+*/
 void endframe(){
 	for (int end = 0; end < 4; end++){
 		send(255);
 	}
 }
 
-void red(int b_red){
-	brightness = set_brightness(b_red);
+/**
+ *	@brief red signal
+ *
+ *	Sends 4 bytes of a signal frame, containing a color code for red color.
+ *	Does not send start and end frames, possible to execute unlimited times.
+ *	Takes a brightness input as parameter ranging 0-31
+*/
+void red(int b){
+	brightness = set_brightness(b);
 	send(brightness);
 	send(0);
 	send(0);
 	send(255);
 }
 
-void blue(int b_blue){
-	brightness = set_brightness(b_blue);
+/**
+ *	@brief blue signal
+ *
+ *	Sends 4 bytes of a signal frame, containing a color code for blue color.
+ *	Does not send start and end frames, possible to execute unlimited times.
+ *	Takes a brightness input as parameter ranging 0-31
+*/
+void blue(int b){
+	brightness = set_brightness(b);
 	send(brightness);
 	send(255);
 	send(0);
 	send(0);
 }
 
-void green(int b_green){
-	brightness = set_brightness(b_green);
+/**
+ *	@brief green signal
+ *
+ *	Sends 4 bytes of a signal frame, containing a color code for green color.
+ *	Does not send start and end frames, possible to execute unlimited times.
+ *	Takes a brightness input as parameter ranging 0-31
+*/
+void green(int b){
+	brightness = set_brightness(b);
 	send(brightness);
 	send(0);
 	send(255);
 	send(0);
 }
 
-void yellow(int b_yellow){
-	brightness = set_brightness(b_yellow);
+/**
+ *	@brief yellow signal
+ *
+ *	Sends 4 bytes of a signal frame, containing a color code for yellow color.
+ *	Does not send start and end frames, possible to execute unlimited times.
+ *	Takes a brightness input as parameter ranging 0-31
+*/
+void yellow(int b){
+	brightness = set_brightness(b);
 	send(brightness);
 	send(0);
 	send(255);
 	send(255);
 }
 
-void purple(int b_purple){
-	brightness = set_brightness(b_purple);
+/**
+ *	@brief purple signal
+ *
+ *	Sends 4 bytes of a signal frame, containing a color code for purple color.
+ *	Does not send start and end frames, possible to execute unlimited times.
+ *	Takes a brightness input as parameter ranging 0-31
+*/
+void purple(int b){
+	brightness = set_brightness(b);
 	send(brightness);
 	send(255);
 	send(0);
 	send(255);
 }
 
-void orange(int b_orange){
-	brightness = set_brightness(b_orange);
+/**
+ *	@brief orange signal
+ *
+ *	Sends 4 bytes of a signal frame, containing a color code for orange color.
+ *	Does not send start and end frames, possible to execute unlimited times.
+ *	Takes a brightness input as parameter ranging 0-31
+*/
+void orange(int b){
+	brightness = set_brightness(b);
 	send(brightness);
 	send(0);
 	send(128);
 	send(255);
 }
 
-void cyan(int b_cyan){
-	brightness = set_brightness(b_cyan);
+/**
+ *	@brief cyan signal
+ *
+ *	Sends 4 bytes of a signal frame, containing a color code for cyan color.
+ *	Does not send start and end frames, possible to execute unlimited times.
+ *	Takes a brightness input as parameter ranging 0-31
+*/
+void cyan(int b){
+	brightness = set_brightness(b);
 	send(brightness);
 	send(255);
 	send(255);
 	send(0);
 }
 
-void pink(int b_pink){
-	brightness = set_brightness(b_pink);
+/**
+ *	@brief pink signal
+ *
+ *	Sends 4 bytes of a signal frame, containing a color code for pink color.
+ *	Does not send start and end frames, possible to execute unlimited times.
+ *	Takes a brightness input as parameter ranging 0-31
+*/
+void pink(int b){
+	brightness = set_brightness(b);
 	send(brightness);
 	send(255);
 	send(102);
 	send(255);
 }
 
-void grey(int b_grey){
-	brightness = set_brightness(b_grey);
+/**
+ *	@brief grey signal
+ *
+ *	Sends 4 bytes of a signal frame, containing a color code for grey color.
+ *	Does not send start and end frames, possible to execute unlimited times.
+ *	Takes a brightness input as parameter ranging 0-31
+*/
+void grey(int b){
+	brightness = set_brightness(b);
 	send(brightness);
 	send(128);
 	send(128);
 	send(128);
 }
 
-void white(int b_white){
-	brightness = set_brightness(b_white);
+/**
+ *	@brief white signal
+ *
+ *	Sends 4 bytes of a signal frame, containing a color code for white color.
+ *	Does not send start and end frames, possible to execute unlimited times.
+ *	Takes a brightness input as parameter ranging 0-31
+*/
+void white(int b){
+	brightness = set_brightness(b);
 	send(brightness);
 	send(255);
 	send(255);
