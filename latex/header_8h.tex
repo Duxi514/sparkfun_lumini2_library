@@ -1,0 +1,236 @@
+\hypertarget{header_8h}{\section{D\-:/doxygen code/apa102\-\_\-library/header.h File Reference}
+\label{header_8h}\index{D\-:/doxygen code/apa102\-\_\-library/header.\-h@{D\-:/doxygen code/apa102\-\_\-library/header.\-h}}
+}
+{\ttfamily \#include $<$avr/io.\-h$>$}\\*
+{\ttfamily \#include $<$util/delay.\-h$>$}\\*
+{\ttfamily \#include $<$avr/interrupt.\-h$>$}\\*
+\subsection*{Macros}
+\begin{DoxyCompactItemize}
+\item 
+\#define \hyperlink{header_8h_a3780e2fe762dc532df7d0f030b55caa0}{C\-S}~P\-I\-N\-B2
+\begin{DoxyCompactList}\small\item\em Chip select on port B pin 2. \end{DoxyCompactList}\item 
+\#define \hyperlink{header_8h_a5d3f11f2fdf8a7e27b975291e0c2c8cc}{M\-O\-S\-I}~P\-I\-N\-B3
+\begin{DoxyCompactList}\small\item\em Master-\/out slave-\/in on port B pin 3. \end{DoxyCompactList}\item 
+\#define \hyperlink{header_8h_a2dd443a4430713d325ab86895a4a45eb}{S\-C\-K}~P\-I\-N\-B5
+\begin{DoxyCompactList}\small\item\em System clock on port B pin 5. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\subsection*{Functions}
+\begin{DoxyCompactItemize}
+\item 
+void \hyperlink{header_8h_a9c9bb330f595b394b823e409ea6ca35a}{S\-P\-I\-\_\-init} ()
+\begin{DoxyCompactList}\small\item\em Initialises S\-P\-I communication. \end{DoxyCompactList}\item 
+void \hyperlink{header_8h_aa2b3901771bdff2f07bf547adceca7f7}{send} (uint8\-\_\-t data)
+\begin{DoxyCompactList}\small\item\em Sends the data through S\-P\-I. \end{DoxyCompactList}\item 
+void \hyperlink{header_8h_a901130756f8345dd22c19f627dc2a0bf}{led\-\_\-setup} (int nr, int bl, int gr, int rd, int lb)
+\item 
+int \hyperlink{header_8h_ade3f399f58fa5be03738568c2774464f}{set\-\_\-brightness} (int bright)
+\begin{DoxyCompactList}\small\item\em Set brightness. \end{DoxyCompactList}\item 
+void \hyperlink{header_8h_af604faf6bc402ad152aa959d07b7c033}{get\-\_\-hun\-\_\-flag} (int c)
+\item 
+void \hyperlink{header_8h_a81dd5b8fbe8d8174f070914d24149491}{rainbow} (int c)
+\item 
+void \hyperlink{header_8h_ad1b96d3871fe1da08f08711a8db49589}{clear\-\_\-ring} ()
+\item 
+void \hyperlink{header_8h_a99eb04bf8fed2beecfb3cb74451416c5}{timer0\-\_\-init} ()
+\begin{DoxyCompactList}\small\item\em Timer0 initialisation. \end{DoxyCompactList}\item 
+\hyperlink{header_8h_add2d7cdddfb682dcc0391e60cf42c7d6}{I\-S\-R} (T\-I\-M\-E\-R0\-\_\-\-O\-V\-F\-\_\-vect)
+\begin{DoxyCompactList}\small\item\em Interrupt callback function. \end{DoxyCompactList}\item 
+void \hyperlink{header_8h_abf935c0694bde428ad365e4ba09c238d}{fillandclear} (int bl, int gr, int rd, int b)
+\item 
+void \hyperlink{header_8h_a2543ae407a08b18ea52b2285bfdaa059}{pulse} (int bl, int gr, int rd)
+\end{DoxyCompactItemize}
+\subsection*{Variables}
+\begin{DoxyCompactItemize}
+\item 
+int \hyperlink{header_8h_aa7ab72a18faba1d13601a9209ff2dcf8}{brightness}
+\begin{DoxyCompactList}\small\item\em Variable holding the brightness value. \end{DoxyCompactList}\item 
+int \hyperlink{header_8h_af65435e974f062a680dd9b3d6b843311}{tot\-\_\-overflow}
+\begin{DoxyCompactList}\small\item\em Variable holding the number of interrupts if enabled. \end{DoxyCompactList}\end{DoxyCompactItemize}
+
+
+\subsection{Macro Definition Documentation}
+\hypertarget{header_8h_a3780e2fe762dc532df7d0f030b55caa0}{\index{header.\-h@{header.\-h}!C\-S@{C\-S}}
+\index{C\-S@{C\-S}!header.h@{header.\-h}}
+\subsubsection[{C\-S}]{\setlength{\rightskip}{0pt plus 5cm}\#define C\-S~P\-I\-N\-B2}}\label{header_8h_a3780e2fe762dc532df7d0f030b55caa0}
+
+
+Chip select on port B pin 2. 
+
+\hypertarget{header_8h_a5d3f11f2fdf8a7e27b975291e0c2c8cc}{\index{header.\-h@{header.\-h}!M\-O\-S\-I@{M\-O\-S\-I}}
+\index{M\-O\-S\-I@{M\-O\-S\-I}!header.h@{header.\-h}}
+\subsubsection[{M\-O\-S\-I}]{\setlength{\rightskip}{0pt plus 5cm}\#define M\-O\-S\-I~P\-I\-N\-B3}}\label{header_8h_a5d3f11f2fdf8a7e27b975291e0c2c8cc}
+
+
+Master-\/out slave-\/in on port B pin 3. 
+
+\hypertarget{header_8h_a2dd443a4430713d325ab86895a4a45eb}{\index{header.\-h@{header.\-h}!S\-C\-K@{S\-C\-K}}
+\index{S\-C\-K@{S\-C\-K}!header.h@{header.\-h}}
+\subsubsection[{S\-C\-K}]{\setlength{\rightskip}{0pt plus 5cm}\#define S\-C\-K~P\-I\-N\-B5}}\label{header_8h_a2dd443a4430713d325ab86895a4a45eb}
+
+
+System clock on port B pin 5. 
+
+
+
+\subsection{Function Documentation}
+\hypertarget{header_8h_ad1b96d3871fe1da08f08711a8db49589}{\index{header.\-h@{header.\-h}!clear\-\_\-ring@{clear\-\_\-ring}}
+\index{clear\-\_\-ring@{clear\-\_\-ring}!header.h@{header.\-h}}
+\subsubsection[{clear\-\_\-ring}]{\setlength{\rightskip}{0pt plus 5cm}void clear\-\_\-ring (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)}}\label{header_8h_ad1b96d3871fe1da08f08711a8db49589}
+Clears ring
+
+Disables every L\-E\-D on the ledring \hypertarget{header_8h_abf935c0694bde428ad365e4ba09c238d}{\index{header.\-h@{header.\-h}!fillandclear@{fillandclear}}
+\index{fillandclear@{fillandclear}!header.h@{header.\-h}}
+\subsubsection[{fillandclear}]{\setlength{\rightskip}{0pt plus 5cm}void fillandclear (
+\begin{DoxyParamCaption}
+\item[{int}]{bl, }
+\item[{int}]{gr, }
+\item[{int}]{rd, }
+\item[{int}]{b}
+\end{DoxyParamCaption}
+)}}\label{header_8h_abf935c0694bde428ad365e4ba09c238d}
+\begin{Desc}
+\item[Examples\-: ]\par
+\hyperlink{fillandclear_8c-example}{fillandclear.\-c}.\end{Desc}
+\hypertarget{header_8h_af604faf6bc402ad152aa959d07b7c033}{\index{header.\-h@{header.\-h}!get\-\_\-hun\-\_\-flag@{get\-\_\-hun\-\_\-flag}}
+\index{get\-\_\-hun\-\_\-flag@{get\-\_\-hun\-\_\-flag}!header.h@{header.\-h}}
+\subsubsection[{get\-\_\-hun\-\_\-flag}]{\setlength{\rightskip}{0pt plus 5cm}void get\-\_\-hun\-\_\-flag (
+\begin{DoxyParamCaption}
+\item[{int}]{c}
+\end{DoxyParamCaption}
+)}}\label{header_8h_af604faf6bc402ad152aa959d07b7c033}
+\hypertarget{header_8h_add2d7cdddfb682dcc0391e60cf42c7d6}{\index{header.\-h@{header.\-h}!I\-S\-R@{I\-S\-R}}
+\index{I\-S\-R@{I\-S\-R}!header.h@{header.\-h}}
+\subsubsection[{I\-S\-R}]{\setlength{\rightskip}{0pt plus 5cm}I\-S\-R (
+\begin{DoxyParamCaption}
+\item[{T\-I\-M\-E\-R0\-\_\-\-O\-V\-F\-\_\-vect}]{}
+\end{DoxyParamCaption}
+)}}\label{header_8h_add2d7cdddfb682dcc0391e60cf42c7d6}
+
+
+Interrupt callback function. 
+
+Gets executed every time timer0 interrupts, then setting the L\-E\-D for 5 different colors at each
+
+For reference see\-: \hyperlink{header_8h_a99eb04bf8fed2beecfb3cb74451416c5}{timer0\-\_\-init()} \hypertarget{header_8h_a901130756f8345dd22c19f627dc2a0bf}{\index{header.\-h@{header.\-h}!led\-\_\-setup@{led\-\_\-setup}}
+\index{led\-\_\-setup@{led\-\_\-setup}!header.h@{header.\-h}}
+\subsubsection[{led\-\_\-setup}]{\setlength{\rightskip}{0pt plus 5cm}void led\-\_\-setup (
+\begin{DoxyParamCaption}
+\item[{int}]{nr, }
+\item[{int}]{bl, }
+\item[{int}]{gr, }
+\item[{int}]{rd, }
+\item[{int}]{lb}
+\end{DoxyParamCaption}
+)}}\label{header_8h_a901130756f8345dd22c19f627dc2a0bf}
+\begin{Desc}
+\item[Examples\-: ]\par
+\hyperlink{led_setup_8c-example}{led\-\_\-setup.\-c}.\end{Desc}
+\hypertarget{header_8h_a2543ae407a08b18ea52b2285bfdaa059}{\index{header.\-h@{header.\-h}!pulse@{pulse}}
+\index{pulse@{pulse}!header.h@{header.\-h}}
+\subsubsection[{pulse}]{\setlength{\rightskip}{0pt plus 5cm}void pulse (
+\begin{DoxyParamCaption}
+\item[{int}]{bl, }
+\item[{int}]{gr, }
+\item[{int}]{rd}
+\end{DoxyParamCaption}
+)}}\label{header_8h_a2543ae407a08b18ea52b2285bfdaa059}
+\begin{Desc}
+\item[Examples\-: ]\par
+\hyperlink{pulse_8c-example}{pulse.\-c}.\end{Desc}
+\hypertarget{header_8h_a81dd5b8fbe8d8174f070914d24149491}{\index{header.\-h@{header.\-h}!rainbow@{rainbow}}
+\index{rainbow@{rainbow}!header.h@{header.\-h}}
+\subsubsection[{rainbow}]{\setlength{\rightskip}{0pt plus 5cm}void rainbow (
+\begin{DoxyParamCaption}
+\item[{int}]{c}
+\end{DoxyParamCaption}
+)}}\label{header_8h_a81dd5b8fbe8d8174f070914d24149491}
+\begin{Desc}
+\item[Examples\-: ]\par
+\hyperlink{rainbow_8c-example}{rainbow.\-c}.\end{Desc}
+\hypertarget{header_8h_aa2b3901771bdff2f07bf547adceca7f7}{\index{header.\-h@{header.\-h}!send@{send}}
+\index{send@{send}!header.h@{header.\-h}}
+\subsubsection[{send}]{\setlength{\rightskip}{0pt plus 5cm}void send (
+\begin{DoxyParamCaption}
+\item[{uint8\-\_\-t}]{data}
+\end{DoxyParamCaption}
+)}}\label{header_8h_aa2b3901771bdff2f07bf547adceca7f7}
+
+
+Sends the data through S\-P\-I. 
+
+Waits until data transmit is finished \hypertarget{header_8h_ade3f399f58fa5be03738568c2774464f}{\index{header.\-h@{header.\-h}!set\-\_\-brightness@{set\-\_\-brightness}}
+\index{set\-\_\-brightness@{set\-\_\-brightness}!header.h@{header.\-h}}
+\subsubsection[{set\-\_\-brightness}]{\setlength{\rightskip}{0pt plus 5cm}int set\-\_\-brightness (
+\begin{DoxyParamCaption}
+\item[{int}]{bright}
+\end{DoxyParamCaption}
+)}}\label{header_8h_ade3f399f58fa5be03738568c2774464f}
+
+
+Set brightness. 
+
+Add brightness bits to the first 111 bitframe
+
+
+\begin{DoxyParams}{Parameters}
+{\em bright} & Brightness ranging 0-\/31 \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+Output ranging from 11100000 to 11111111 
+\end{DoxyReturn}
+\begin{Desc}
+\item[Examples\-: ]\par
+\hyperlink{set_brightness_8c-example}{set\-\_\-brightness.\-c}.\end{Desc}
+\hypertarget{header_8h_a9c9bb330f595b394b823e409ea6ca35a}{\index{header.\-h@{header.\-h}!S\-P\-I\-\_\-init@{S\-P\-I\-\_\-init}}
+\index{S\-P\-I\-\_\-init@{S\-P\-I\-\_\-init}!header.h@{header.\-h}}
+\subsubsection[{S\-P\-I\-\_\-init}]{\setlength{\rightskip}{0pt plus 5cm}void S\-P\-I\-\_\-init (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)}}\label{header_8h_a9c9bb330f595b394b823e409ea6ca35a}
+
+
+Initialises S\-P\-I communication. 
+
+D\-D\-R\-B $|$= (1 $<$$<$ C\-S) $|$ (1 $<$$<$ M\-O\-S\-I) $|$ (1 $<$$<$ S\-C\-K); --$>$ Sets up output pins (chip select, master-\/out slave-\/in, system clock)
+
+S\-P\-C\-R = (1 $<$$<$ S\-P\-E) $|$ (1 $<$$<$ M\-S\-T\-R); --$>$ Sets up u\-C as master \hypertarget{header_8h_a99eb04bf8fed2beecfb3cb74451416c5}{\index{header.\-h@{header.\-h}!timer0\-\_\-init@{timer0\-\_\-init}}
+\index{timer0\-\_\-init@{timer0\-\_\-init}!header.h@{header.\-h}}
+\subsubsection[{timer0\-\_\-init}]{\setlength{\rightskip}{0pt plus 5cm}void timer0\-\_\-init (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)}}\label{header_8h_a99eb04bf8fed2beecfb3cb74451416c5}
+
+
+Timer0 initialisation. 
+
+Enables the timer0 of the microcontroller to toggle the leds
+
+T\-C\-C\-R0\-B $|$= (1 $<$$<$ C\-S02)$|$(1 $<$$<$ C\-S00); --$>$ prescaler setup for slow blinking
+
+T\-C\-N\-T0 = 0; --$>$ counter set to 0
+
+T\-I\-M\-S\-K0 $|$= (1 $<$$<$ T\-O\-I\-E0); --$>$ interrupt register setup
+
+sei(); --$>$ enable interrupts for toggling 
+
+\subsection{Variable Documentation}
+\hypertarget{header_8h_aa7ab72a18faba1d13601a9209ff2dcf8}{\index{header.\-h@{header.\-h}!brightness@{brightness}}
+\index{brightness@{brightness}!header.h@{header.\-h}}
+\subsubsection[{brightness}]{\setlength{\rightskip}{0pt plus 5cm}int brightness}}\label{header_8h_aa7ab72a18faba1d13601a9209ff2dcf8}
+
+
+Variable holding the brightness value. 
+
+\hypertarget{header_8h_af65435e974f062a680dd9b3d6b843311}{\index{header.\-h@{header.\-h}!tot\-\_\-overflow@{tot\-\_\-overflow}}
+\index{tot\-\_\-overflow@{tot\-\_\-overflow}!header.h@{header.\-h}}
+\subsubsection[{tot\-\_\-overflow}]{\setlength{\rightskip}{0pt plus 5cm}int tot\-\_\-overflow}}\label{header_8h_af65435e974f062a680dd9b3d6b843311}
+
+
+Variable holding the number of interrupts if enabled. 
+
